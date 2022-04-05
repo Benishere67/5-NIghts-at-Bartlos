@@ -12,11 +12,13 @@ public class RoomGenerator : MonoBehaviour
     public GameObject teacherDesk;
     public GameObject poster;
     public GameObject whiteboard;
+    public GameObject ceilingLight;
     public GameObject lightSwitch;
 
     public GameObject logicSwitch;
     public GameObject pressurePlate;
     public GameObject ghostSensor;
+    public GameObject magnetBox;
 
 
     void Start()
