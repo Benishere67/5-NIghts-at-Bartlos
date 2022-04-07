@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class taskTest : MonoBehaviour
 {
-    OnCollisionEnter(Collision other) {
-        if (other.GameObject.tag == "Object") {
+    void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.tag == "Object") {
             Debug.Log("Task Completed");
         }
     }
