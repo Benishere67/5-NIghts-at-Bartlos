@@ -1,9 +1,15 @@
+//Should be attached to door in hallway
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomGenerator : MonoBehaviour
 {
+    public GameObject floor;
+    public GameObject wall;
+    public GameObject ceiling;
+
     public GameObject key;
     public GameObject door;
     public GameObject cabinet;
