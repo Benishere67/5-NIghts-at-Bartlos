@@ -5,6 +5,7 @@ using UnityEngine;
 public class GhostMovement : MonoBehaviour
 {
     public UnityEngine.AI.NavMeshAgent ghost;
+    public GameObject playerHead;
     public GameObject player;
     public float ghostMode;
     public float wanderX;
@@ -19,6 +20,7 @@ public class GhostMovement : MonoBehaviour
         ghost = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
         ghostMode = 0;
         player = GameObject.Find("Player");
+        playerHead = GameObject.Find("HeadCollider");
         ghost.SetDestination(player.transform.position);
     }
 
@@ -42,10 +44,17 @@ public class GhostMovement : MonoBehaviour
         for (int i = 0; i < hitColliders.Length; i++)
         {
             GameObject hitCollider = hitColliders[i].gameObject;
-            if (hitCollider.CompareTag("Player"))
+            if (hitCollider.CompareTag("NotHidden"))
             {
                 ghostMode = 1;
             }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Flashlight") {
+            Destroy(gameObject);
         }
     }
 
@@ -61,7 +70,11 @@ public class GhostMovement : MonoBehaviour
         else if (ghostMode == 1) {
             Debug.Log("Found the player");
             ghost.SetDestination(player.transform.position);
+           
+            if (playerHead.tag == "Hidden") {
+                Debug.Log("Player is hiding");
+                ghostMode = 0;
+            }
         }
-        
     }
 }
