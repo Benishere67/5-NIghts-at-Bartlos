@@ -7,11 +7,16 @@ public class GhostMovement : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent ghost;
     public GameObject playerHead;
     public GameObject player;
+    
     public float ghostMode;
+    
     public float wanderX;
-    public float wanderZ;
+    public float wanderZ; 
     public Vector3 wanderDestination;
     public bool wanderReset;
+    
+    public float lightCount;
+    public bool inLight;
     
     void Start()
     {
@@ -22,6 +27,8 @@ public class GhostMovement : MonoBehaviour
         player = GameObject.Find("Player");
         playerHead = GameObject.Find("HeadCollider");
         ghost.SetDestination(player.transform.position);
+        lightCount = 0;
+        inLight = false;
     }
 
     void WanderTimer()
@@ -54,7 +61,15 @@ public class GhostMovement : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Flashlight") {
-            Destroy(gameObject);
+            inLight = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Flashlight") {
+            inLight = false;
+            lightCount = 0;
         }
     }
 
@@ -75,6 +90,14 @@ public class GhostMovement : MonoBehaviour
                 Debug.Log("Player is hiding");
                 ghostMode = 0;
             }
+        }
+
+        if (inLight == true) {
+            lightCount += 1;
+        }
+        
+        if (lightCount == 500) {
+            Destroy(gameObject);
         }
     }
 }
