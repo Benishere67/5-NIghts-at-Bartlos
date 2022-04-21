@@ -96,7 +96,7 @@ public class GhostMovement : MonoBehaviour
             lightCount += 1;
         }
         
-        if (lightCount == 500) {
+        if (lightCount >= 200) {
             Destroy(gameObject);
         }
     }
