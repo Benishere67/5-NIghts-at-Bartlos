@@ -6,9 +6,12 @@ using UnityEngine;
 
 public class RoomGenerator : MonoBehaviour
 {
-    public Mesh floor;
-    public Mesh wall;
-    public Mesh ceiling;
+    public GameObject floor;
+    public GameObject ceiling;
+    public GameObject wall1;
+    public GameObject wall2;
+    public GameObject wall3;
+    public GameObject wall4;
 
     public GameObject key;
     public GameObject door;
@@ -31,25 +34,25 @@ public class RoomGenerator : MonoBehaviour
     public float height;
     
 
-    Mesh[] meshes;
-    Vector3[] vertices;
-    int[] triangles;
+    public Mesh[] meshes;
+    public Vector3[] vertices;
+    public int[] triangles;
 
     void Start()
     {
-        
         width = Random.Range(3,10);
         depth = Random.Range(3,10);
         height = Random.Range(10,15);
-        createRoom(width, height, depth);
+        Vector3 size= new Vector3(width,height,depth);
+        floor.transform.localScale = size;
+        ceiling.transform.localScale = size;
     }
-
+}
+/*
     void createRoom(float w, float h, float d){
         floor = createShape(w, d);
         UpdateMesh();
-        
-        ceiling = createShape(d, h);
-        UpdateMesh();
+
     }
    
     Mesh createShape(float x, float y){
@@ -76,5 +79,5 @@ public class RoomGenerator : MonoBehaviour
         meshes[0].triangles=triangles;
         meshes[0].RecalculateNormals();
     }
+*/
 
-}
