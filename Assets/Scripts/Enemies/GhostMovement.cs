@@ -21,7 +21,7 @@ public class GhostMovement : MonoBehaviour
     void Start()
     {
         wanderReset = false;
-        InvokeRepeating("WanderTimer", 0f, 2f);
+        InvokeRepeating("WanderTimer", 0f, 4f);
         ghost = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
         ghostMode = 0;
         player = GameObject.Find("Player");
@@ -38,8 +38,8 @@ public class GhostMovement : MonoBehaviour
 
     void Wandering()
     {
-        wanderX = ghost.transform.position.x + Random.Range(-5, 5);
-        wanderZ = ghost.transform.position.y + Random.Range(-5, 5);
+        wanderX = ghost.transform.position.x + Random.Range(-7, 7);
+        wanderZ = ghost.transform.position.y + Random.Range(-7, 7);
         wanderDestination = new Vector3(wanderX, 0, wanderZ);
         ghost.SetDestination(wanderDestination); 
         wanderReset = true;
@@ -58,10 +58,18 @@ public class GhostMovement : MonoBehaviour
         }
     }
 
+    void RunAway()
+    {
+        wanderX = player.transform.position.x + 5;
+        wanderZ = player.transform.position.y + 5;
+        wanderDestination = new Vector3(wanderX, 0, wanderZ);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Flashlight") {
             inLight = true;
+            ghostMode = 2;
         }
     }
 
@@ -70,6 +78,7 @@ public class GhostMovement : MonoBehaviour
         if (other.gameObject.tag == "Flashlight") {
             inLight = false;
             lightCount = 0;
+            ghostMode = 0;
         }
     }
 
@@ -91,12 +100,16 @@ public class GhostMovement : MonoBehaviour
                 ghostMode = 0;
             }
         }
+        else if (ghostMode == 2) {
+            RunAway();
+            Debug.Log("Running");
+        }
 
         if (inLight == true) {
             lightCount += 1;
         }
         
-        if (lightCount >= 200) {
+        if (lightCount >= 500) {
             Destroy(gameObject);
         }
     }
