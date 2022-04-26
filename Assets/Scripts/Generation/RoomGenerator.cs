@@ -40,12 +40,20 @@ public class RoomGenerator : MonoBehaviour
 
     void Start()
     {
-        width = Random.Range(3,10);
-        depth = Random.Range(3,10);
-        height = Random.Range(10,15);
-        Vector3 size= new Vector3(width,height,depth);
+        width = Random.Range(30,60);
+        depth = Random.Range(30,60);
+        height = Random.Range(13,18);
+        Vector3 size= new Vector3(width,1,depth);
         floor.transform.localScale = size;
         ceiling.transform.localScale = size;
+        wall1.transform.position = new Vector3(wall1.transform.position.x, wall1.transform.position.y,-depth/2);
+        wall1.transform.localScale = new Vector3(width,1,height);
+        wall3.transform.position = new Vector3(wall3.transform.position.x, wall3.transform.position.y,depth/2);
+        wall3.transform.localScale = new Vector3(width,1,height);
+        wall2.transform.position = new Vector3(width/2, wall2.transform.position.y,wall2.transform.position.z);
+        wall2.transform.localScale = new Vector3(width,1,height);
+        wall4.transform.position = new Vector3(-width/2, wall4.transform.position.y,wall4.transform.position.z);
+        wall4.transform.localScale = new Vector3(width,1,height);
     }
 }
 /*
