@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class PlayerController : MonoBehaviour {
 
@@ -11,7 +12,8 @@ public class PlayerController : MonoBehaviour {
     
     void Update() {
 
-        transform.position += speed * Time.deltaTime * new Vector3(input.axis.x, 0, input.axis.y);
+        Vector3 Direction =  Player.instance.hmdTransform.TransformDirection(new Vector3(input.axis.x, 0, input.axis.y));
+        transform.position += speed * Time.deltaTime * Vector3.ProjectOnPlane(Direction, Vector3.up);
         
     }
 }
