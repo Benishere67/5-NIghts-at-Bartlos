@@ -15,7 +15,7 @@ public class GhostMovement : MonoBehaviour
     public Vector3 wanderDestination;
     public bool wanderReset;
     
-    public float lightCount;
+    public float lightTimer;
     public bool inLight;
     
     void Start()
@@ -27,7 +27,7 @@ public class GhostMovement : MonoBehaviour
         player = GameObject.Find("Player");
         playerHead = GameObject.Find("HeadCollider");
         ghost.SetDestination(player.transform.position);
-        lightCount = 0;
+        lightTimer = 4f;
         inLight = false;
     }
 
@@ -58,18 +58,17 @@ public class GhostMovement : MonoBehaviour
         }
     }
 
-    void RunAway()
+    /* void RunAway()
     {
         wanderX = player.transform.position.x + 5;
         wanderZ = player.transform.position.y + 5;
         wanderDestination = new Vector3(wanderX, 0, wanderZ);
-    }
+    } */
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Flashlight") {
             inLight = true;
-            ghostMode = 2;
         }
     }
 
@@ -77,7 +76,7 @@ public class GhostMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Flashlight") {
             inLight = false;
-            lightCount = 0;
+            lightTimer = 4f;
             ghostMode = 0;
         }
     }
@@ -85,31 +84,24 @@ public class GhostMovement : MonoBehaviour
     void Update()
     {
         if (ghostMode == 0) {
-            Debug.Log("Wandering");
             if (wanderReset == false) {
                 Wandering();
             }
             PlayerDetection();
         } 
         else if (ghostMode == 1) {
-            Debug.Log("Found the player");
             ghost.SetDestination(player.transform.position);
            
             if (playerHead.tag == "Hidden") {
-                Debug.Log("Player is hiding");
                 ghostMode = 0;
             }
         }
-        else if (ghostMode == 2) {
-            RunAway();
-            Debug.Log("Running");
-        }
 
         if (inLight == true) {
-            lightCount += 1;
+            lightTimer -= Time.deltaTime;
         }
         
-        if (lightCount >= 500) {
+        if (lightTimer <= 0) {
             Destroy(gameObject);
         }
     }
