@@ -8,6 +8,7 @@ TagManager:
   - Hidden
   - NotHidden
   - Flashlight
+  - trashcan
   layers:
   - Default
   - TransparentFX
