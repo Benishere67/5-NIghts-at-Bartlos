@@ -12,12 +12,13 @@ public class taskTextController : MonoBehaviour
 
     private bool timerDone = false;
 
-    public static int taskNum;
+    public static int taskNum = 1;
 
     // Update is called once per frame
     void Update() {
-        if (time >= 3) {
+        if (time >= 5) {
             timerDone = true;
+            time = 0;
         }
 
         if (taskNum == 1) {
@@ -25,7 +26,6 @@ public class taskTextController : MonoBehaviour
                 taskText.text = ("Task Completed!");
                 Debug.Log("task 1 = slayed");
                 StartCoroutine(timer());
-                taskNum = 2;
             }
             else {
                 taskText.text = ("Throw away the trash");
@@ -40,7 +40,8 @@ public class taskTextController : MonoBehaviour
     }
 
     IEnumerator timer() {
-        yield return new WaitForSecondsRealtime(3f);
-        time += 3f;
+        yield return new WaitForSecondsRealtime(5f);
+        time += 5f;
+        taskNum = 2;
     }
 }
