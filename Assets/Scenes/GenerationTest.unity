@@ -686,6 +686,9 @@ MonoBehaviour:
   whiteboard: {fileID: 0}
   ceilingLight: {fileID: 0}
   lightSwitch: {fileID: 0}
+  trashCan: {fileID: 919132149155446097, guid: 8d9a73382aa82f84da07f7691b57337d, type: 3}
+  recycleBin1: {fileID: 0}
+  recycleBin2: {fileID: 0}
   logicSwitch: {fileID: 0}
   pressurePlate: {fileID: 0}
   ghostSensor: {fileID: 0}
@@ -693,9 +696,6 @@ MonoBehaviour:
   width: 0
   depth: 0
   height: 0
-  meshes: []
-  vertices: []
-  triangles: 
 --- !u!23 &1272988979
 MeshRenderer:
   m_ObjectHideFlags: 0
