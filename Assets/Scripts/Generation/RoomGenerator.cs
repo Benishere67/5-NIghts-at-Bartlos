@@ -13,6 +13,8 @@ public class RoomGenerator : MonoBehaviour
     public GameObject wall3;
     public GameObject wall4;
 
+    public GameObject[] objects;
+    public float[] rows;
     public GameObject key;
     public GameObject door;
     public GameObject cabinet;
@@ -32,6 +34,7 @@ public class RoomGenerator : MonoBehaviour
     public GameObject ghostSensor;
     public GameObject magnetBox;
 
+   
     public float width;
     public float depth;
     public float height;
@@ -39,11 +42,15 @@ public class RoomGenerator : MonoBehaviour
 
     void Start()
     {
-        width = Random.Range(30,60);
-        depth = Random.Range(30,60);
+        width = Random.Range(3,6)*10;
+        depth = Random.Range(3,6)*10;
         height = Random.Range(13,18);
+        //for(int i=0; i<width/10; i++){
+        //    rows[i] = -width + ((2*width/(width/10)*i));
+       // }
         roomSizing();
-        placeObject(trashCan);
+        placeObject(trashCan,-.138f);
+        placeObject(table,3.7f);
     }
 
     public void roomSizing(){
@@ -62,9 +69,11 @@ public class RoomGenerator : MonoBehaviour
         wall4.transform.localScale = new Vector3(depth,1,height);
     }
     
-    public void placeObject(GameObject obid){
+    public void placeObject(GameObject obid, float y){
         float x = Random.Range(-width/2,width/2);
         float z = Random.Range(-depth/2,depth/2);
-        Instantiate(obid, new Vector3(x,.5f,z), Quaternion.Euler(-90,0,0));
+        GameObject go = Instantiate(obid, new Vector3(x,y,z), Quaternion.Euler(-90,0,0)) as GameObject;
+        go.transform.parent = GameObject.Find("Structures").transform;
+        go.transform.localScale = new Vector3(1,1,1);
     }
 }
