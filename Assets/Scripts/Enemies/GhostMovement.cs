@@ -38,8 +38,8 @@ public class GhostMovement : MonoBehaviour
 
     void Wandering()
     {
-        wanderX = ghost.transform.position.x + Random.Range(-7, 7);
-        wanderZ = ghost.transform.position.y + Random.Range(-7, 7);
+        wanderX = ghost.transform.position.x + Random.Range(-70, 70);
+        wanderZ = ghost.transform.position.y + Random.Range(-70, 70);
         wanderDestination = new Vector3(wanderX, 0, wanderZ);
         ghost.SetDestination(wanderDestination); 
         wanderReset = true;
