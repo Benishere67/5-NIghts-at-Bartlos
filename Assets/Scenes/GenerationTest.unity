@@ -682,7 +682,7 @@ MonoBehaviour:
   door: {fileID: 0}
   cabinet: {fileID: 0}
   chair: {fileID: 0}
-  table: {fileID: 919132149155446097, guid: f5a1ca76cb015dd45a125e2d52419344, type: 3}
+  table: {fileID: 6506496029578911177, guid: 754ef0a24254d3a4a83d9d944a737622, type: 3}
   teacherDesk: {fileID: 0}
   poster: {fileID: 0}
   whiteboard: {fileID: 0}
@@ -698,6 +698,8 @@ MonoBehaviour:
   width: 0
   depth: 0
   height: 0
+  rows: 0
+  columns: 0
 --- !u!23 &1272988979
 MeshRenderer:
   m_ObjectHideFlags: 0
