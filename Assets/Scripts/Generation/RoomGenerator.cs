@@ -50,7 +50,9 @@ public class RoomGenerator : MonoBehaviour
         depth = columns*10;
         roomSizing();
         placeObject(trashCan,1,1);
-        placeObject(table,1,1);
+        for (int i=0; i<rows; i++){
+            placeObject(table,i,1);
+        }
     }
 
     public void roomSizing(){
@@ -69,9 +71,9 @@ public class RoomGenerator : MonoBehaviour
         wall4.transform.localScale = new Vector3(depth,1,height);
     }
     
-    public void placeObject(GameObject obid, int row, int column){
-        float x = Random.Range(-width/2,width/2);
-        float z = Random.Range(-depth/2,depth/2);
+    public void placeObject(GameObject obid, int row, int col){
+        float x = -width/2+((width/rows)*row);
+        float z = -depth/2+((depth/columns)*col);
         GameObject go = Instantiate(obid, new Vector3(x,0,z), Quaternion.Euler(-90,0,0)) as GameObject;
         go.transform.parent = GameObject.Find("Structures").transform;
         go.transform.localScale = new Vector3(1,1,1);
