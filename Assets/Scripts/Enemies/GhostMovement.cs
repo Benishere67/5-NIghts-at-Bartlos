@@ -21,7 +21,7 @@ public class GhostMovement : MonoBehaviour
     void Start()
     {
         wanderReset = false;
-        InvokeRepeating("WanderTimer", 0f, 4f);
+        InvokeRepeating("WanderTimer", 0f, 10f);
         ghost = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
         ghostMode = 0;
         player = GameObject.Find("Player");
@@ -38,8 +38,8 @@ public class GhostMovement : MonoBehaviour
 
     void Wandering()
     {
-        wanderX = ghost.transform.position.x + Random.Range(-70, 70);
-        wanderZ = ghost.transform.position.y + Random.Range(-70, 70);
+        wanderX = ghost.transform.position.x + Random.Range(-200, 200);
+        wanderZ = ghost.transform.position.y + Random.Range(-200, 200);
         wanderDestination = new Vector3(wanderX, 0, wanderZ);
         ghost.SetDestination(wanderDestination); 
         wanderReset = true;
@@ -47,7 +47,7 @@ public class GhostMovement : MonoBehaviour
 
     void PlayerDetection()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(ghost.transform.position, 15);
+        Collider[] hitColliders = Physics.OverlapSphere(ghost.transform.position, 150);
         for (int i = 0; i < hitColliders.Length; i++)
         {
             GameObject hitCollider = hitColliders[i].gameObject;
