@@ -9,6 +9,7 @@ TagManager:
   - NotHidden
   - Flashlight
   - trashcan
+  - toolBelt
   layers:
   - Default
   - TransparentFX
