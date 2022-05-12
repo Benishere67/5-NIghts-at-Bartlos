@@ -682,12 +682,12 @@ MonoBehaviour:
   door: {fileID: 0}
   cabinet: {fileID: 919132149155446097, guid: b2f94a6d7c754344bb4366e21f52baca, type: 3}
   chair: {fileID: 0}
-  table: {fileID: 919132149155446097, guid: b36e472f5d5cfcc4bba34668884bec09, type: 3}
+  table: {fileID: 6506496029578911177, guid: 754ef0a24254d3a4a83d9d944a737622, type: 3}
   cart: {fileID: 919132149155446097, guid: 17c1cac11ee93ee44892d0178da7a2f3, type: 3}
   teacherDesk: {fileID: 0}
   poster: {fileID: 0}
   whiteboard: {fileID: 0}
-  ceilingLight: {fileID: 0}
+  ceilingLight: {fileID: 919132149155446097, guid: 9aa4c8fedb47fde4cbb38d0302a8bf78, type: 3}
   lightSwitch: {fileID: 0}
   trashCan: {fileID: 919132149155446097, guid: 8d9a73382aa82f84da07f7691b57337d, type: 3}
   recycleBin1: {fileID: 919132149155446097, guid: 8d8682411a3d23b409e204a9f5d42471, type: 3}
