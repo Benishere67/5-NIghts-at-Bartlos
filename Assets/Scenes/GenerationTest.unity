@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -680,17 +680,18 @@ MonoBehaviour:
   objects: []
   key: {fileID: 0}
   door: {fileID: 0}
-  cabinet: {fileID: 0}
+  cabinet: {fileID: 919132149155446097, guid: b2f94a6d7c754344bb4366e21f52baca, type: 3}
   chair: {fileID: 0}
-  table: {fileID: 6506496029578911177, guid: 754ef0a24254d3a4a83d9d944a737622, type: 3}
+  table: {fileID: 919132149155446097, guid: b36e472f5d5cfcc4bba34668884bec09, type: 3}
+  cart: {fileID: 919132149155446097, guid: 17c1cac11ee93ee44892d0178da7a2f3, type: 3}
   teacherDesk: {fileID: 0}
   poster: {fileID: 0}
   whiteboard: {fileID: 0}
   ceilingLight: {fileID: 0}
   lightSwitch: {fileID: 0}
   trashCan: {fileID: 919132149155446097, guid: 8d9a73382aa82f84da07f7691b57337d, type: 3}
-  recycleBin1: {fileID: 0}
-  recycleBin2: {fileID: 0}
+  recycleBin1: {fileID: 919132149155446097, guid: 8d8682411a3d23b409e204a9f5d42471, type: 3}
+  recycleBin2: {fileID: 919132149155446097, guid: 34479f779576f484d84fc57618ff33f2, type: 3}
   logicSwitch: {fileID: 0}
   pressurePlate: {fileID: 0}
   ghostSensor: {fileID: 0}

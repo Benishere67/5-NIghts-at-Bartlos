@@ -20,6 +20,7 @@ public class RoomGenerator : MonoBehaviour
     public GameObject cabinet;
     public GameObject chair;
     public GameObject table;
+    public GameObject cart;
     public GameObject teacherDesk;
     public GameObject poster;
     public GameObject whiteboard;
@@ -49,9 +50,16 @@ public class RoomGenerator : MonoBehaviour
         width = rows*10;
         depth = columns*10;
         roomSizing();
-        placeObject(trashCan,1,1);
-        for (int i=0; i<rows; i++){
-            placeObject(table,i,1);
+        
+        placeObject(recycleBin1,1,columns,-8,-1);
+        placeObject(recycleBin2,1,columns,-7,-1);
+        placeObject(trashCan,1,columns,-6,-1);
+        placeObject(cabinet,1,1,-9,-1);
+        placeObject(cart,rows-2,columns-2,0,0);
+        for(int j=1; j<columns; j++){
+            for (int i=1; i<=rows; i++){
+                placeObject(table,i,j,-5,-5);
+            }
         }
     }
 
@@ -71,9 +79,9 @@ public class RoomGenerator : MonoBehaviour
         wall4.transform.localScale = new Vector3(depth,1,height);
     }
     
-    public void placeObject(GameObject obid, int row, int col){
-        float x = -width/2+((width/rows)*row);
-        float z = -depth/2+((depth/columns)*col);
+    public void placeObject(GameObject obid, int row, int col, float rowSub, float colSub){
+        float x = (-width/2+((width/rows)*row))+rowSub;
+        float z = (-depth/2+((depth/columns)*col))+colSub;
         GameObject go = Instantiate(obid, new Vector3(x,0,z), Quaternion.Euler(-90,0,0)) as GameObject;
         go.transform.parent = GameObject.Find("Structures").transform;
         go.transform.localScale = new Vector3(1,1,1);
