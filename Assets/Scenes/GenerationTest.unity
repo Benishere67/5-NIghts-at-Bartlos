@@ -753,7 +753,7 @@ MonoBehaviour:
   objects: []
   key: {fileID: 0}
   door: {fileID: 0}
-  cabinet: {fileID: 919132149155446097, guid: b2f94a6d7c754344bb4366e21f52baca, type: 3}
+  cabinet: {fileID: 6864756174856118887, guid: 659c59c2daa600a4eb75c36ac55788cc, type: 3}
   chair: {fileID: 0}
   table: {fileID: 6506496029578911177, guid: 754ef0a24254d3a4a83d9d944a737622, type: 3}
   cart: {fileID: 919132149155446097, guid: 17c1cac11ee93ee44892d0178da7a2f3, type: 3}

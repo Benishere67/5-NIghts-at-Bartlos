@@ -9,9 +9,9 @@ public class RoomGenerator : MonoBehaviour
     public GameObject floor;
     public GameObject ceiling;
     public GameObject wall1;
-    public GameObject wall2;
+    public GameObject wall2; // Needs windows
     public GameObject wall3;
-    public GameObject wall4;
+    public GameObject wall4; // Needs doors
 
     public GameObject[] objects;
 
@@ -56,8 +56,9 @@ public class RoomGenerator : MonoBehaviour
         placeObject(trashCan,1,columns,-6,-1,0);
         placeObject(cabinet,1,1,-9,-1,0);
         placeObject(cart,rows-2,columns-2,0,0,0);
-        for(int j=1; j<columns; j++){
-            for (int i=1; i<=rows; i++){
+
+        for(int j=1; j<=columns; j++){
+            for (int i=2; i<=rows; i++){
                 placeObject(table,i,j,-5,-5,0);
             }
         }
