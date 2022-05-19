@@ -11,6 +11,7 @@ TagManager:
   - trashcan
   - toolBelt
   - Ghost
+  - top
   layers:
   - Default
   - TransparentFX

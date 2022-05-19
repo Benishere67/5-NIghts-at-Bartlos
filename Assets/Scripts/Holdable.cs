@@ -6,11 +6,9 @@ public class Holdable : MonoBehaviour
 {
     public Transform Bucket;
 
-    void OnCollsionEnter(Collision other) {
-        Debug.Log("ok");
-        if (other.gameObject.tag == "bucket") {
-            this.gameObject.transform.SetParent(Bucket.parent);
-            Debug.Log("hmmm");
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "top") {
+            this.gameObject.transform.SetParent(Bucket);
         }
     }
 }

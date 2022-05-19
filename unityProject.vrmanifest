@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.5nightsatbartlos.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\Bbull\\Documents\\Unity\\Projects\\5-Nights-at-Bartlos\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "E:\\5-Nights-at-Bartlos\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "5 Nights at Bartlos [Testing]"
