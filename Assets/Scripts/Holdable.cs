@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class Holdable : MonoBehaviour
 {
-    public Transform toolBelt;
-
-    private bool held = false;
-
-    void Update() {
-        if (held) {
-            this.gameObject.transform.position = toolBelt.position;
-        }
-    }
+    public Transform Bucket;
 
     void OnCollsionEnter(Collision other) {
-        if (other.gameObject.tag == "toolBelt") {
-            held = true;
+        Debug.Log("ok");
+        if (other.gameObject.tag == "bucket") {
+            this.gameObject.transform.SetParent(Bucket.parent);
+            Debug.Log("hmmm");
         }
     }
 }
