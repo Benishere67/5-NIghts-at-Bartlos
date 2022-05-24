@@ -44,28 +44,38 @@ public class RoomGenerator : MonoBehaviour
 
     void Start()
     {
-        rows = Random.Range(3,6);
+        rows = Random.Range(4,7);
         columns = Random.Range(3,6);
         height = Random.Range(13,18);
         width = rows*10;
         depth = columns*10;
         roomSizing();
         
-        placeObject(recycleBin1,1,columns,-8,-1,1.8f);
-        placeObject(recycleBin2,1,columns,-7,-1,0);
-        placeObject(trashCan,1,columns,-6,-1,0);
-        placeObject(cabinet,1,1,-9,-1,0);
-        placeObject(cart,rows-2,columns-2,0,0,0);
+        placeObject(recycleBin1,1,columns,-8,-1,1.8f,0);
+        placeObject(recycleBin2,1,columns,-7,-1,0,0);
+        placeObject(trashCan,1,columns,-6,-1,0,0);
+        
+//      placeObject(cart,rows-2,columns-2,0,0,0,0);
 
         for(int j=1; j<=columns; j++){
-            for (int i=2; i<=rows; i++){
-                placeObject(table,i,j,-5,-5,0);
+            for (int i=2; i<rows; i++){
+                placeObject(table,i,j,-5,-5,0,0);
             }
         }
-    
+        int cabCount=Random.Range(1,columns);
+        Debug.Log(cabCount);
+        for(int cab=1;cab<=columns; cab++){
+            if(cab<=cabCount){
+                placeObject(cabinet,rows,cab,0,-9,0,90);
+            }else{
+                placeObject(table,rows,cab,-5,-5,0,0);
+            }
+        }
+
+
         for(int k=1; k<=columns; k++){
             for (int l=1; l<=rows; l++){
-                placeObject(ceilingLight,l,k,-5,-5,height-1.38f);
+                placeObject(ceilingLight,l,k,-5,-5,height-1.38f,0);
             }
         }
     }
@@ -87,10 +97,10 @@ public class RoomGenerator : MonoBehaviour
         wall4.transform.localScale = new Vector3(depth,1,height);
     }
     
-    public void placeObject(GameObject obid, int row, int col, float rowSub, float colSub, float y){
+    public void placeObject(GameObject obid, int row, int col, float rowSub, float colSub, float y, float yRot){
         float x = (-width/2+((width/rows)*row))+rowSub;
         float z = (-depth/2+((depth/columns)*col))+colSub;
-        GameObject go = Instantiate(obid, new Vector3(x,y,z), Quaternion.Euler(-90,0,0)) as GameObject;
+        GameObject go = Instantiate(obid, new Vector3(x,y,z), Quaternion.Euler(-90,yRot,0)) as GameObject;
         go.transform.parent = GameObject.Find("Structures").transform;
         go.transform.localScale = new Vector3(1,1,1);
     }
