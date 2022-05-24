@@ -6,7 +6,8 @@ public class PlayerSurvival : MonoBehaviour
 {
     public GameObject player;
     public GameObject ghost;
-    public MeshRenderer deathscreen;
+    public MeshRenderer deathtext;
+    public MeshRenderer deathbackground;
     public Vector3 respawn;
     public Vector3 ghostreset;
  
@@ -14,7 +15,8 @@ public class PlayerSurvival : MonoBehaviour
     {
         gameObject.tag = "NotHidden";
         ghost = GameObject.FindGameObjectWithTag("Ghost");
-        deathscreen.enabled = false;
+        deathtext.enabled = false;
+        deathbackground.enabled = false;
     }
  
     void OnTriggerEnter(Collider other)
@@ -34,7 +36,8 @@ public class PlayerSurvival : MonoBehaviour
         if (Vector3.Distance(ghost.transform.position, player.transform.position) <= 5) {
             player.transform.position = respawn;
             ghost.transform.position = ghostreset;
-            //deathscreen.enabled = true;
+            deathtext.enabled = true;
+            deathbackground.enabled = true;
         }
     }
  
