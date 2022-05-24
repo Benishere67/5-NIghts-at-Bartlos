@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 10
+    agentRadius: 7
     agentHeight: 50
     agentSlope: 45
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 3.3333333
+    cellSize: 2.3333333
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -5969,7 +5969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2592753494182829730, guid: 341cf81a922f6d6458317a6e796efd35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 190.4
+      value: 38.9
       objectReference: {fileID: 0}
     - target: {fileID: 2592753494182829730, guid: 341cf81a922f6d6458317a6e796efd35, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5977,7 +5977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2592753494182829730, guid: 341cf81a922f6d6458317a6e796efd35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -80.9
+      value: -136.2
       objectReference: {fileID: 0}
     - target: {fileID: 2592753494182829730, guid: 341cf81a922f6d6458317a6e796efd35, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22378,13 +22378,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4557445965906423759, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
-      propertyPath: ghost
-      value: 
-      objectReference: {fileID: 1740540308}
-    - target: {fileID: 4557445965906423759, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 92398148}
+    - target: {fileID: 4557445965906423759, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: deathscreen
+      value: 
+      objectReference: {fileID: 1979464314}
+    - target: {fileID: 4557445965906423759, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: ghostreset.x
+      value: 38.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557445965906423759, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: ghostreset.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557445965906423759, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: ghostreset.z
+      value: -136.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
 --- !u!4 &1706974608 stripped
