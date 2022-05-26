@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CompDestroy : MonoBehaviour
 {
-
     public GameObject metal;
 
     void OnCollisionEnter(Collision other) {
