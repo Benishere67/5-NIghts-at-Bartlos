@@ -21,12 +21,7 @@ public class taskTextController : MonoBehaviour
             time = 0;
         }
 
-        if (taskNum == 1) {
-            if (Task1.taskDone == true) {
-                taskText.text = ("Task Completed!");
-                Debug.Log("task 1 = slayed");
-                StartCoroutine(timer());
-            }
+       /* if (taskNum == 1) {
             else {
                 taskText.text = ("Throw away the trash");
             }
@@ -38,7 +33,8 @@ public class taskTextController : MonoBehaviour
             taskText.text = ("Go to next task");
         }
     }
-
+*/
+    }
     IEnumerator timer() {
         yield return new WaitForSecondsRealtime(5f);
         time += 5f;

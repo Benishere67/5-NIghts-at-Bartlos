@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Task1 : MonoBehaviour
+public class CompDestroy : MonoBehaviour
 {
-    public static bool taskDone;
+
+    public GameObject metal;
 
     void OnCollisionEnter(Collision other) {
-        if (other.gameObject.tag == "trashcan") {
-            taskDone = true;
+        if (other.gameObject.tag == "Screwdriver") {
             this.gameObject.SetActive(false);
-            Debug.Log("cube in da can");
+            metal.SetActive(false);
         }
     }
 }
