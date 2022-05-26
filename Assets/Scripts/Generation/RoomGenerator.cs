@@ -13,8 +13,6 @@ public class RoomGenerator : MonoBehaviour
     public GameObject wall3;
     public GameObject wall4; // Needs doors
 
-    public GameObject[] objects;
-
     public GameObject key;
     public GameObject door;
     public GameObject cabinet;
@@ -23,18 +21,11 @@ public class RoomGenerator : MonoBehaviour
     public GameObject cart;
     public GameObject teacherDesk;
     public GameObject poster;
-    public GameObject whiteboard;
     public GameObject ceilingLight;
     public GameObject lightSwitch;
     public GameObject trashCan;
     public GameObject recycleBin1;
     public GameObject recycleBin2;
-
-    public GameObject logicSwitch;
-    public GameObject pressurePlate;
-    public GameObject ghostSensor;
-    public GameObject magnetBox;
-
    
     public float width;
     public float depth;
@@ -60,6 +51,7 @@ public class RoomGenerator : MonoBehaviour
         for(int j=1; j<=columns; j++){
             for (int i=2; i<rows; i++){
                 placeObject(table,i,j,-5,-5,0,0);
+                placeObject(chair,i,j,-5,-5,0,0);
             }
         }
         int cabCount=Random.Range(1,columns);
@@ -69,6 +61,7 @@ public class RoomGenerator : MonoBehaviour
                 placeObject(cabinet,rows,cab,0,-9,0,90);
             }else{
                 placeObject(table,rows,cab,-5,-5,0,0);
+                placeObject(chair,rows,cab,-5,-5,0,0);
             }
         }
 
