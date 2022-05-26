@@ -58,13 +58,6 @@ public class GhostMovement : MonoBehaviour
         }
     }
 
-    /* void RunAway()
-    {
-        wanderX = player.transform.position.x + 5;
-        wanderZ = player.transform.position.y + 5;
-        wanderDestination = new Vector3(wanderX, 0, wanderZ);
-    } */
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Flashlight") {

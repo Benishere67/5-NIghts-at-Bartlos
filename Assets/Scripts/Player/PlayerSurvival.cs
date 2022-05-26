@@ -6,10 +6,15 @@ public class PlayerSurvival : MonoBehaviour
 {
     public GameObject player;
     public GameObject ghost;
+
     public MeshRenderer deathtext;
     public MeshRenderer deathbackground;
+
     public Vector3 respawn;
     public Vector3 ghostreset;
+
+    public bool death;
+    public float deathseconds;
  
     void Start()
     {
@@ -17,6 +22,8 @@ public class PlayerSurvival : MonoBehaviour
         ghost = GameObject.FindGameObjectWithTag("Ghost");
         deathtext.enabled = false;
         deathbackground.enabled = false;
+        death = false;
+        deathseconds = 0.3f;
     }
  
     void OnTriggerEnter(Collider other)
@@ -30,14 +37,36 @@ public class PlayerSurvival : MonoBehaviour
     {
         gameObject.tag = "NotHidden";
     }
+
+    void Death()
+    {
+        deathtext.enabled = true;
+        deathbackground.enabled = true;
+        Time.timeScale = 0.1f;
+        deathseconds -= Time.deltaTime;
+    }
+
+    void Respawn ()
+    {
+        death = false;
+        deathtext.enabled = false;
+        deathbackground.enabled = false;
+        Time.timeScale = 1f;
+    }
  
     void Update()
     {
         if (Vector3.Distance(ghost.transform.position, player.transform.position) <= 5) {
             player.transform.position = respawn;
             ghost.transform.position = ghostreset;
-            deathtext.enabled = true;
-            deathbackground.enabled = true;
+            death = true;
+        }
+
+        if (death == true) {
+            Death();
+            if (deathseconds <= 0) {
+                Respawn();
+            }
         }
     }
  
