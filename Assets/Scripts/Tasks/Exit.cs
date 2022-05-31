@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CompDestroy : MonoBehaviour
+public class Exit : MonoBehaviour
 {
-    public GameObject metal;
-
     void OnCollisionEnter(Collision other) {
-        if (other.gameObject.tag == "Screwdriver") {
+        if (other.gameObject.tag == "key") {
             this.gameObject.SetActive(false);
-            metal.SetActive(true);
         }
     }
 }
