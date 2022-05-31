@@ -64,6 +64,9 @@ public class RoomGenerator : MonoBehaviour
                 placeObject(chair,rows,cab,-5,-5,0,0);
             }
         }
+        
+        int doorPos = Random.Range(-columns/2+1,columns/2);
+        door.transform.position = new Vector3 (-width/2,door.transform.position.y,doorPos*10);
 
 
         for(int k=1; k<=columns; k++){
