@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2592753494182829730}
   - component: {fileID: 7482014570089962595}
+  - component: {fileID: 4999952773447163950}
   - component: {fileID: 390387399501245046}
+  - component: {fileID: 7257952028575325536}
   - component: {fileID: 1380707960119681972}
   m_Layer: 0
   m_Name: BartloGhost 1
@@ -57,6 +59,29 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4999952773447163950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578648159404821401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce7a53e02ffdc445808f4ce8a11a571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ambience: {fileID: 0}
+  audioClips: []
+  ambienceClip: {fileID: 0}
+  AmbientSound: {fileID: 0}
+  ambienceStart: {x: 0, y: 0, z: 0}
+  tpLocation: {x: 0, y: 0, z: 0}
+  clipSelect: 0
+  randTime: 0
+  clipPlay: 0
+  tpX: 0
+  tpZ: 0
 --- !u!114 &390387399501245046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +104,24 @@ MonoBehaviour:
   wanderReset: 0
   lightTimer: 0
   inLight: 0
+--- !u!114 &7257952028575325536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578648159404821401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ad271c88998dc43868406d66d2ef5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bartloGhost: {fileID: 0}
+  audioClips: []
+  bartloGhostClip: {fileID: 0}
+  clipSelect: 0
+  randTime: 0
+  clipPlay: 0
 --- !u!54 &1380707960119681972
 Rigidbody:
   m_ObjectHideFlags: 0
