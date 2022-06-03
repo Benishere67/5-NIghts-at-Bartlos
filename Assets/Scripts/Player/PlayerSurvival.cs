@@ -23,7 +23,7 @@ public class PlayerSurvival : MonoBehaviour
         deathtext.enabled = false;
         deathbackground.enabled = false;
         death = false;
-        deathseconds = 0.3f;
+        deathseconds = 0.1f;
     }
  
     void OnTriggerEnter(Collider other)
