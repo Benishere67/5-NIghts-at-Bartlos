@@ -22,7 +22,7 @@ public class BartloLines : MonoBehaviour
         clipSelect = Random.Range(0, audioClips.Length);
         bartloGhostClip = audioClips[clipSelect];
         bartloGhost.PlayOneShot(bartloGhostClip);
-        randTime = Random.Range(5, 10);
+        randTime = Random.Range(20, 30);
     }
 
 
